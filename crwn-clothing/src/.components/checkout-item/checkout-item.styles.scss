@@ -20,19 +20,18 @@
     .quantity,
     .price {
       width: 23%;
-
-      span{
-          margin: 0px 10px 0px 10px;
-          cursor: pointer;
-
-          &:hover{
-              opacity: 0.5;
-          }
-      }
     }
   
     .quantity {
-      padding-left: 20px;
+      display: flex;
+  
+      .arrow {
+        cursor: pointer;
+      }
+  
+      .value {
+        margin: 0 10px;
+      }
     }
   
     .remove-button {
@@ -40,4 +39,3 @@
       cursor: pointer;
     }
   }
-  
