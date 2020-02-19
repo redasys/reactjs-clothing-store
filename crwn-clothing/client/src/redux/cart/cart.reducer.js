@@ -35,6 +35,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
                 hidden: true,
                 cartItems: []
             }
+            case cartActionTypes.EMPTY_CART:
+                return {
+                    ...state,                 
+                    cartItems: []
+                }
         default:
             return state;
 
