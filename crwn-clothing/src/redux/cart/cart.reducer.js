@@ -1,5 +1,6 @@
 import { cartActionTypes } from "./cart.types";
 import { addItemToCart, removeItemFromCart } from "./cart.utils";
+import UserActionTypes from "../user/user.types";
 
 const INITIAL_STATE = {
     hidden: true,
@@ -26,7 +27,13 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         case cartActionTypes.CLEAR_ITEM:
             return {
                 ...state,
-                cartItems: state.cartItems.filter(item=>item.id!==action.payload.id)
+                cartItems: state.cartItems.filter(item => item.id !== action.payload.id)
+            }
+        case UserActionTypes.LOGOUT_SUCCESS:
+            return {
+                ...state,
+                hidden: true,
+                cartItems: []
             }
         default:
             return state;
